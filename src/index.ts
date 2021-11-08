@@ -1,5 +1,8 @@
 import { AUTO, Game } from 'phaser';
 import GameScene from './GameScene';
+import { register as registerCustom } from './gameobjects/Custom';
+
+registerCustom();
 
 new Game({
   type: AUTO,
