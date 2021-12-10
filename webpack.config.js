@@ -61,7 +61,10 @@ module.exports = (env) => {
     devtool: 'inline-source-map',
     devServer: {
       open: true,
-      port: 5000,
+      port: 3000,
+      proxy: {
+        '/api': 'http://localhost:3001',
+      },
     },
   };
 };
