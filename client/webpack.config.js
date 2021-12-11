@@ -20,7 +20,7 @@ module.exports = (env) => {
       phaser: 'phaser',
     },
     output: {
-      path: path.resolve(__dirname, 'build', 'www'),
+      path: path.resolve(__dirname, '..', 'build', 'www'),
       filename: '[name].js',
     },
     module: {
@@ -66,7 +66,6 @@ module.exports = (env) => {
     devtool: 'inline-source-map',
     stats: 'minimal',
     devServer: {
-      open: true,
       port: 3000,
       proxy: {
         '/api': 'http://localhost:3001',

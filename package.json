@@ -5,9 +5,9 @@
     "eslint": "eslint .",
     "prettier": "prettier --write ./src/.",
     "dev:server": "nodemon ./server/index.ts",
-    "dev:client": "webpack serve --env phaser-debug=true",
+    "dev:client": "webpack serve -c ./client/webpack.config.js --env phaser-debug=true",
     "dev": "concurrently -c \"bgBlue.bold,bgMagenta.bold\" \"npm:dev:server\" \"npm:dev:client\"",
-    "build": "webpack --env phaser-debug=false --env production=true",
+    "build:client": "webpack -c ./client/webpack.config.js --env phaser-debug=false --env production=true",
     "start": "",
     "generate": "node ./scripts/generate.js"
   },
