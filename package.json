@@ -7,8 +7,9 @@
     "dev:server": "nodemon ./server/index.ts",
     "dev:client": "webpack serve -c ./client/webpack.config.js --env phaser-debug=true",
     "dev": "concurrently -c \"bgBlue.bold,bgMagenta.bold\" \"npm:dev:server\" \"npm:dev:client\"",
+    "build:server": "tsc --project ./server",
     "build:client": "webpack -c ./client/webpack.config.js --env phaser-debug=false --env production=true",
-    "start": "",
+    "start": "node ./build/index.js",
     "generate": "node ./scripts/generate.js"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "phaser": "^3.55.2"
   }
 }

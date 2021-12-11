@@ -1,7 +1,10 @@
+import path from 'path';
 import express from 'express';
 import scoreRouter from './Routes/ScoreController';
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'www')));
 
 app.use('/api/score', scoreRouter);
 
