@@ -20,7 +20,7 @@ module.exports = (env) => {
       phaser: 'phaser',
     },
     output: {
-      path: path.resolve(__dirname, 'build'),
+      path: path.resolve(__dirname, 'build', 'www'),
       filename: '[name].js',
     },
     module: {
@@ -47,18 +47,24 @@ module.exports = (env) => {
           {
             // Style
             from: path.resolve(__dirname, 'public', 'style.css'),
-            to: path.resolve(__dirname, 'build'),
           },
           {
             // Images
             from: path.resolve(__dirname, 'public', 'images'),
-            to: path.resolve(__dirname, 'build', 'images'),
+            to: '[path]/images/[name][ext]',
+            noErrorOnMissing: true,
+          },
+          {
+            // Sounds
+            from: path.resolve(__dirname, 'public', 'sounds'),
+            to: '[path]/sounds/[name][ext]',
             noErrorOnMissing: true,
           },
         ],
       }),
     ],
     devtool: 'inline-source-map',
+    stats: 'minimal',
     devServer: {
       open: true,
       port: 3000,
