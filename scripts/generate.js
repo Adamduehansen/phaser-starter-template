@@ -9,8 +9,14 @@ const {
 const path = require('path');
 
 const templateFolder = path.resolve(__dirname, '..', 'templates');
-const gameObjectsFolder = path.resolve(__dirname, '..', 'src', 'gameObjects');
-const typesFolder = path.resolve(__dirname, '..', '@types');
+const gameObjectsFolder = path.resolve(
+  __dirname,
+  '..',
+  'client',
+  'src',
+  'gameObjects'
+);
+const typesFolder = path.resolve(__dirname, '..', 'client', '@types');
 
 generateTemplateFiles([
   {
