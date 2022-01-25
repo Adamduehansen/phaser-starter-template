@@ -18,14 +18,6 @@ class GameScene extends Scene {
       const { x, y } = event;
       this.add.custom(x, y);
     });
-
-    fetch('/api/score')
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        console.log(json);
-      });
   }
 }
 
