@@ -2,16 +2,20 @@
   "name": "phaser-starter-template",
   "version": "0.1.0",
   "scripts": {
-    "eslint": "eslint .",
-    "prettier": "prettier --write ./src/.",
     "build": "webpack --env phaser-debug=false --env production=true",
-    "start": "webpack serve --env phaser-debug=true",
-    "generate": "node ./scripts/generate.js"
+    "eslint": "eslint .",
+    "generate": "node ./scripts/generate.js",
+    "prettier": "prettier --write ./src/.",
+    "start": "concurrently -c \"bgBlue.bold,bgMagenta.bold\" \"npm:webpack:serve\" \"npm:watch:gameobject-factory\"",
+    "webpack:serve": "webpack serve --env phaser-debug=true",
+    "watch:gameobject-factory": "ts-node ./scripts/generate-gameobject-factory --watch",
+    "write:gameobject-factory": "ts-node ./scripts/generate-gameobject-factory"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "clean-webpack-plugin": "*",
+    "concurrently": "^7.0.0",
     "copy-webpack-plugin": "^9.0.1",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
