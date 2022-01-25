@@ -57,4 +57,21 @@ generateTemplateFiles([
       ]);
     },
   },
+  {
+    option: 'Game Scene',
+    defaultCase: '(pascalCase)',
+    stringReplacers: [
+      {
+        question: 'Enter a name of the game scene',
+        slot: '__name__',
+      },
+    ],
+    entry: {
+      folderPath: path.resolve(templateFolder, 'gameScene', '__name__.ts'),
+    },
+    output: {
+      path: path.resolve(gameSceneFolder, '__name__.ts'),
+      pathAndFileNameDefaultCase: '(pascalCase)',
+    },
+  },
 ]);
