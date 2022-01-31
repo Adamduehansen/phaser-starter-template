@@ -14,13 +14,13 @@ export function register(): void {
       x: number,
       y: number
     ): __name__ {
-      const star = new __name__(this.scene, x, y);
+      const obj = new __name__(this.scene, x, y);
 
-      this.displayList.add(star);
+      this.displayList.add(obj);
 
-      this.scene.physics.world.enableBody(star, Physics.Arcade.DYNAMIC_BODY);
+      this.scene.physics.world.enableBody(obj, Physics.Arcade.DYNAMIC_BODY);
 
-      return star;
+      return obj;
     }
   );
 }
