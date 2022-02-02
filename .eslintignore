@@ -3,4 +3,4 @@ build
 
 # Type declarations
 @types
-templates/d.ts
+templates/sprite.d.ts

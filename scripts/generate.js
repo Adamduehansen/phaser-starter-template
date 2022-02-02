@@ -15,16 +15,16 @@ const gameSceneFolder = path.resolve(__dirname, '..', 'src');
 
 generateTemplateFiles([
   {
-    option: 'Game Object',
+    option: 'Sprite',
     defaultCase: '(pascalCase)',
     stringReplacers: [
       {
-        question: 'Enter a name of the game object',
+        question: 'Enter a name of the sprite',
         slot: '__name__',
       },
     ],
     entry: {
-      folderPath: path.resolve(templateFolder, 'gameObjects', '__name__.ts'),
+      folderPath: path.resolve(templateFolder, 'sprite', '__name__.ts'),
     },
     output: {
       path: path.resolve(gameObjectsFolder, '__name__.ts'),
@@ -33,7 +33,7 @@ generateTemplateFiles([
     onComplete: (results) => {
       generateTemplateFilesBatch([
         {
-          option: 'd.ts',
+          option: 'sprite.d.ts',
           defaultCase: '(pascalCase)',
           dynamicReplacers: [
             {
@@ -42,7 +42,11 @@ generateTemplateFiles([
             },
           ],
           entry: {
-            folderPath: path.resolve(templateFolder, 'd.ts', '__name__.d.ts'),
+            folderPath: path.resolve(
+              templateFolder,
+              'sprite.d.ts',
+              '__name__.d.ts'
+            ),
           },
           output: {
             path: path.resolve(typesFolder, '__name__.d.ts'),
