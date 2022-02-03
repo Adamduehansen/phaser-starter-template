@@ -14,6 +14,3 @@ npm run prettier
 
 ## Build production build
 Run `npm run build` which will produce a build folder at the root of the project.
-
-## Run production build
-Deploy the build folder to a server and run with `node ./index.js`, or run `npm start`.
